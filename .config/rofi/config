@@ -1,0 +1,21 @@
+rofi.lines: 5
+rofi.eh: 1
+rofi.padding: 40
+rofi.width: 25
+rofi.bw: 0
+rofi.dpi: 96
+rofi.fullscreen: false
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.show-icons: false
+rofi.location: 0
+rofi.yoffset: -80
+rofi.border-radius: 20
+ 
+!                  'background', 'border', 'separator'
+rofi.color-window: argb:40000000, #7c8389, #98beff
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: argb:031d1f21, #ffffff, argb:031d1f21, argb:c998beff,  #ffffff
+rofi.color-urgent: argb:031d1f21, #ffffff, argb:bc303541, argb:031d1f21, #8e4ceb
+rofi.color-active: argb:031d1f21, #ffffff, argb:031d1f21, argb:031d1f21, #8e4ceb
+rofi.font: Noto Sans Regular 15
