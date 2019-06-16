@@ -1,0 +1,90 @@
+source ~/.vim/plugins.vim
+
+" UI
+set guioptions=1
+colorscheme elflord
+set background=dark
+let g:airline_theme='dracula'
+let g:airline_powerline_fonts = 1
+
+" use spaces instead of tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" buffer stuff
+" set hidden
+
+" enable mouse
+set mouse=a
+
+" enable line numbers
+set number
+" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" prettier
+let g:prettier#quickfix_auto_focus = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.css,*.scss,*.json,*.md,*.yaml,*.hbs,*.html PrettierAsync
+
+
+" indentation
+filetype plugin indent on
+
+" map
+let mapleader=" "
+nmap <F1> <nop>
+map <F2> orequire 'pry'; binding.pry unless $pstop<ESC>
+nnoremap <silent> <F3> :Rgrep<CR>*
+nnoremap <F4> <C-]>
+nnoremap <expr> <leader>r 'ci' . nr2char(getchar()) . '<C-R>0<ESC>'
+
+" rb
+autocmd FileType ruby map <buffer> <F2> orequire 'pry'; binding.pry unless $pstop<ESC>
+
+" js
+autocmd FileType javascript map <buffer> <F2> odebugger;<ESC>
+
+" html
+vmap <expr> <leader>Sd 'S<div>'
+
+" CtrlP
+set wildignore+=*coverage/*,*tmp/*,*node_modules/*,*dist/*,*.so,*.swp,*.zip
+nnoremap scp :CtrlP<CR>
+nnoremap scl :CtrlP .<CR>
+nnoremap scb :CtrlPBuffer<CR>
+nnoremap scr :CtrlPMRU<CR>
+nnoremap sct :CtrlPTag<CR>
+nnoremap scp :CtrlP %:h<CR>
+
+" tsuquyomi
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
+" let g:tsuquyomi_single_quote_import = 1
+" nnoremap td :TsuDefinition<CR>
+" nnoremap ti :TsuImport<CR>
+" nnoremap ts :TsuSearch<CR>
+" nnoremap tr :TsuRenameSymbol<CR>
+
+" ctags
+nnoremap <F5> :!~/.vim/bin/ctags.sh<CR>
+set tags=./tags;/
+
+cabbrev E Explore
+
+" closetag
+let g:closetag_filenames = "*.hbs, *.html"
+
+" grep
+let Grep_Skip_Dirs = 'node_modules tmp coverage'
+let Grep_Skip_Files = 'tags'
