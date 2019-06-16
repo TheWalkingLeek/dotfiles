@@ -1,0 +1,5 @@
+~/.config/polybar/launch.sh &
+
+compton &
+
+feh --bg-scale ~/pictures/wallpapers/the_deer.jpg &
