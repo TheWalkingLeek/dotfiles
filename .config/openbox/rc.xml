@@ -186,6 +186,21 @@
       </action>
     </keybind>
     <!-- custom keybindings -->
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master 5%-</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -D pulse sset Master 5%+</command>
+      </action>
+    </keybind>
     <keybind key="A-d">
       <action name="Execute">
         <command>rofi -show drun</command>
