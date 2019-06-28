@@ -35,7 +35,7 @@ let g:syntastic_check_on_wq = 0
 " prettier
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.json,*.md,*.yaml,*.hbs,*.html PrettierAsync
+autocmd BufWritePre *.js,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
 
 
 " indentation

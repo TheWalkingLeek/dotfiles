@@ -45,12 +45,20 @@ signal=10
 
 # Graphics Card usage
 #
-[gpu-load]
-label=GPU
-interval=10
+# [gpu-load]
+# label=GPU
+# interval=10
 #min_width=GPU 100% 100% 100% 100%
 #T_WARN=70
 #T_CRIT=90
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+label=BAT
+#label=⚡
+interval=30
 
 # Memory usage
 #
@@ -65,10 +73,16 @@ interval=30
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-[disk]
-label=HOME
+# [disk]
+# label=HOME
 #DIR=/mnt/data
-interval=30
+# interval=30
+
+[wifi]
+# INTERFACE=wlp2s0
+label=wifi:
+interval=10
+separator=false
 
 # Network interface monitoring
 #
