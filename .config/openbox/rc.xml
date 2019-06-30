@@ -186,6 +186,20 @@
       </action>
     </keybind>
     <!-- custom keybindings -->
+    <!-- utility stuff -->
+    <keybind key="A-S-r">
+      <action name="Execute">
+        <command>openbox --restart</command>
+      </action>
+    </keybind>
+    <keybind key="A-Return">
+      <action name="Execute">
+        <command>terminator</command>
+      </action>
+    </keybind>
+    <keybind key="A-S-q">
+      <action name="Close"/>
+    </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>amixer set Master toggle</command>
@@ -206,9 +220,86 @@
         <command>rofi -show drun</command>
       </action>
     </keybind>
-    <keybind key="A-C-l">
+    <keybind key="S-A-d">
+      <action name="Execute">
+        <command>rofi -show window</command>
+      </action>
+    </keybind>
+    <keybind key="S-C-l">
       <action name="Execute">
         <command>~/.config/i3/lock.sh</command>
+      </action>
+    </keybind>
+    <!-- window navigation -->
+    <keybind key="A-k">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="S-A-h">
+      <action name="SendToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-l">
+      <action name="SendToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-k">
+      <action name="SendToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-j">
+      <action name="SendToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-l">
+      <action name="DirectionalCycleWindows">
+        <direction>right</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-h">
+      <action name="DirectionalCycleWindows">
+        <direction>left</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="DirectionalCycleWindows">
+        <direction>up</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="DirectionalCycleWindows">
+        <direction>down</direction>
+      </action>
+    </keybind>
+    <keybind key="C-A-l">
+      <action name="GoToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-k">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-j">
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-h">
+      <action name="GoToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <!-- default keybindings -->
