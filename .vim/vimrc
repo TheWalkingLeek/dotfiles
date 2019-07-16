@@ -35,7 +35,7 @@ let g:syntastic_check_on_wq = 0
 " prettier
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.ts,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
 
 
 " indentation
@@ -55,8 +55,8 @@ autocmd FileType ruby map <buffer> <F2> orequire 'pry'; binding.pry unless $psto
 " js
 autocmd FileType javascript map <buffer> <F2> odebugger;<ESC>
 
-" html
-vmap <expr> <leader>Sd 'S<div>'
+" ts
+autocmd FileType typescript map <buffer> <F2> odebugger;<ESC>
 
 " CtrlP
 set wildignore+=*coverage/*,*tmp/*,*node_modules/*,*dist/*,*.so,*.swp,*.zip
