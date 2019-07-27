@@ -8,7 +8,7 @@
 # i3 config file (v4)
 # # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 focus_follows_mouse no
 
@@ -197,22 +197,24 @@ exec --no-startup-id xautolock -time 1 -locker "$Locker
 
 
 # Status Bar
- bar {
-     font           pango:Terminus, FontAwesome 10
-     status_command i3blocks
-     strip_workspace_numbers yes
+ # bar {
+ #     font           pango:Terminus, FontAwesome 10
+ #     status_command i3blocks
+ #     strip_workspace_numbers yes
 
-     colors{
-         background #2F343F
-         separator  #3a5154
-         statusline #DCDCDC
+ #     colors{
+ #         background #2F343F
+ #         separator  #3a5154
+ #         statusline #DCDCDC
 
-         urgent_workspace   #2f343a #ff0000 #ffffff
-         focused_workspace  #3a5154 #3a5154 #ffffff
-         inactive_workspace #333333 #222222 #888888
-         urgent_workspace   #2f343a #900000 #ffffff
-     }
- }
+ #         urgent_workspace   #2f343a #ff0000 #ffffff
+ #         focused_workspace  #3a5154 #3a5154 #ffffff
+ #         inactive_workspace #333333 #222222 #888888
+ #         urgent_workspace   #2f343a #900000 #ffffff
+ #     }
+ # }
+
+exec --no-startup-id ~/.config/i3/polybar_launch.sh &
 
 exec --no-startup-id feh --bg-scale $background
 
@@ -226,3 +228,8 @@ mode "pass-through" {
 }
 
 bindsym $mod+t mode "pass-through"
+
+exec xset +fp /home/nrauch/.local/share/fonts
+exec xset fp rehash
+
+for_window [class=".*"] border pixel 1
