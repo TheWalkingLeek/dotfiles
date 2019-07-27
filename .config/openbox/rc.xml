@@ -3,7 +3,7 @@
         Copy the file to $HOME/.config/openbox/ instead. -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
-    <strength>10</strength>
+    <strength>40</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
   <focus>
@@ -34,7 +34,7 @@
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>1</primaryMonitor>
+    <primaryMonitor>Active</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
@@ -153,8 +153,8 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>0</top>
-    <bottom>0</bottom>
+    <top>20</top>
+    <bottom>20</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -187,17 +187,27 @@
     </keybind>
     <!-- custom keybindings -->
     <!-- utility stuff -->
-    <keybind key="A-S-r">
+    <keybind key="W-S-1">
+      <action name="MoveResizeTo">
+        <monitor>1</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="MoveResizeTo">
+        <monitor>2</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-S-r">
       <action name="Execute">
         <command>openbox --restart</command>
       </action>
     </keybind>
-    <keybind key="A-Return">
+    <keybind key="W-Return">
       <action name="Execute">
         <command>terminator</command>
       </action>
     </keybind>
-    <keybind key="A-S-q">
+    <keybind key="W-S-q">
       <action name="Close"/>
     </keybind>
     <keybind key="XF86AudioMute">
@@ -215,17 +225,17 @@
         <command>amixer -D pulse sset Master 5%+</command>
       </action>
     </keybind>
-    <keybind key="A-d">
+    <keybind key="W-d">
       <action name="Execute">
         <command>rofi -show drun</command>
       </action>
     </keybind>
-    <keybind key="S-A-d">
+    <keybind key="S-W-d">
       <action name="Execute">
         <command>rofi -show window</command>
       </action>
     </keybind>
-    <keybind key="S-C-l">
+    <keybind key="W-C-l">
       <action name="Execute">
         <command>~/.config/i3/lock.sh</command>
       </action>
@@ -365,9 +375,9 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
+    <!-- <keybind key="W-d"> -->
+    <!--   <action name="ToggleShowDesktop"/> -->
+    <!-- </keybind> -->
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
       <action name="Close"/>
