@@ -175,7 +175,7 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 1%-
 
 #Lock settings
 set $Locker ~/.config/i3/lock.sh
-bindsym Control+Mod1+l exec $Locker
+bindsym Control+$mod+l exec $Locker
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -221,15 +221,10 @@ exec --no-startup-id feh --bg-scale $background
 exec --no-startup-id xinput set-prop 13 287 1 
 
 exec xcompmgr -c -f -n
-
-# Pass through mode so that any other bindigs are ignored, used for gaming
-mode "pass-through" {
-    bindsym $mod+t mode "default"
-}
-
-bindsym $mod+t mode "pass-through"
-
 exec xset +fp /home/nrauch/.local/share/fonts
 exec xset fp rehash
 
 for_window [class=".*"] border pixel 1
+
+# utility bindings
+bindsym $mod+F2 exec firefox
