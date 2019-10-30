@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install',
         \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
+  Plug 'kristijanhusak/vim-carbon-now-sh'
 
   " git
   Plug 'tpope/vim-fugitive'

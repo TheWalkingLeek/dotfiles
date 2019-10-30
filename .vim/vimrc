@@ -19,7 +19,8 @@ set expandtab
 set mouse=a
 
 " enable line numbers
-set number
+set number relativenumber
+set nu rnu
 " highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " syntastic
@@ -88,3 +89,6 @@ let g:closetag_filenames = "*.hbs, *.html"
 " grep
 let Grep_Skip_Dirs = 'node_modules tmp coverage'
 let Grep_Skip_Files = 'tags'
+
+" search
+set incsearch
