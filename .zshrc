@@ -128,7 +128,7 @@ export EDITOR="vim"
 
 # Custom alias
 alias ..='cd ..'
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+alias dotf="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
 # Add minishift to PATH
 export PATH="$PATH:$HOME/minishift"
@@ -137,12 +137,14 @@ export PATH="$PATH:$HOME/minishift"
 export ALIEN_SECTIONS_LEFT=(
   user
   path
+  vcs_branch:async
+  vcs_status:async
+  vcs_dirty:async
   prompt
 )
 
 export ALIEN_SECTIONS_RIGHT=(
   time
-  vcs_branch:async
-  vcs_status:async
-  vcs_dirty:async
 )
+
+# export ALIEN_SECTION_USER_BG=100
