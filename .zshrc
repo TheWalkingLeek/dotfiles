@@ -129,9 +129,13 @@ export EDITOR="vim"
 # Custom alias
 alias ..='cd ..'
 alias dotf="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+alias 'gnome-control-center'='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
 
 # Add minishift to PATH
 export PATH="$PATH:$HOME/minishift"
+
+# Add cargo to PATH
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # alien theme config
 export ALIEN_SECTIONS_LEFT=(
