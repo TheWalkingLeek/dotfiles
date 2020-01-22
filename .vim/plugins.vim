@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
         \ 'do': 'yarn install',
         \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
   Plug 'kristijanhusak/vim-carbon-now-sh'
+  Plug 'terryma/vim-multiple-cursors'
 
   " git
   Plug 'tpope/vim-fugitive'

@@ -71,6 +71,7 @@ ZSH_THEME="alien/alien"
 plugins=(
   git
   zsh-autosuggestions
+  pr-jobs
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -138,6 +139,8 @@ export PATH="$PATH:$HOME/minishift"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # alien theme config
+export ALIEN_VERSIONS_PROMPT='RUBY_S NODE_S'
+
 export ALIEN_SECTIONS_LEFT=(
   user
   path
@@ -148,7 +151,10 @@ export ALIEN_SECTIONS_LEFT=(
 )
 
 export ALIEN_SECTIONS_RIGHT=(
+  versions
   time
 )
 
 # export ALIEN_SECTION_USER_BG=100
+# export JAVA_HOME="/home/nrauch/artemis/"
+# export ARTEMIS_HOME="/home/nrauch/artemis/"

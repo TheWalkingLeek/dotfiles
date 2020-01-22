@@ -131,7 +131,7 @@ workspace 2:web output $monR
 workspace 3:comms output $monL
 workspace 4:server output $monL
 workspace 5:tests output $monR
-workspace 6:music output $monR
+workspace 6:music output $monL
 workspace 7:other output $monR
 workspace 10:gitg output $monR
 
@@ -225,7 +225,7 @@ exec xcompmgr -c -f -n
 exec xset +fp /home/nrauch/.local/share/fonts
 exec xset fp rehash
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 # utility bindings
 bindsym $mod+F2 exec firefox
