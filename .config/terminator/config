@@ -1,0 +1,35 @@
+[global_config]
+  dbus = False
+  title_font = Terminus Bold 9
+  window_state = hidden
+[keybindings]
+  help = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#000917"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Monospace 8
+    foreground_color = "#ffffff"
+    login_shell = True
+    palette = "#000000:#ef2929:#00cd00:#cdcd00:#729fcf:#c766c9:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#3465a4:#ad7fa8:#00ffff:#ffffff"
+    scrollback_infinite = True
+    scrollback_lines = 800
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[New Profile]]
+    cursor_color = "#aaaaaa"
+  [[New Profile 2]]
+    cursor_color = "#aaaaaa"
