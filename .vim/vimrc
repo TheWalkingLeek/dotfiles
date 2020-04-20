@@ -3,7 +3,7 @@ source ~/.vim/plugins.vim
 " UI
 set guioptions=1
 set background=dark
-let g:airline_theme='raven'
+let g:airline_theme='murmur'
 let g:airline_powerline_fonts = 1
 " important!!
 set termguicolors
@@ -109,6 +109,18 @@ let Grep_Skip_Files = 'tags'
 " search
 set incsearch
 
+" Diffing
+if &diff
+  set cursorline
+  map ] ]c
+  map [ [c
+  " hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+  " hi DiffChange ctermbg=white  guibg=#ececec gui=none   cterm=none
+  " hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+  set diffopt=iwhite
+  set wrap
+endif
+"
 " CoC
 
 " Use tab for trigger completion with characters ahead and navigate.

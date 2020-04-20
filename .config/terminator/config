@@ -23,7 +23,7 @@
     font = Monospace 8
     foreground_color = "#ffffff"
     login_shell = True
-    palette = "#000000:#ef2929:#00cd00:#cdcd00:#729fcf:#c766c9:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#3465a4:#ad7fa8:#00ffff:#ffffff"
+    palette = "#000000:#ef2929:#00cd00:#004c78:#729fcf:#c766c9:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#009de2:#3465a4:#ad7fa8:#00ffff:#ffffff"
     scrollback_infinite = True
     scrollback_lines = 800
     scrollbar_position = hidden
