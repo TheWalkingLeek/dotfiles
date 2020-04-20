@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
   " general
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'mbbill/undotree'
+  Plug 'franbach/miramare'
 
   " code general
   Plug 'Chiel92/vim-autoformat'
@@ -17,6 +19,7 @@ call plug#begin('~/.vim/plugged')
         \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'terryma/vim-multiple-cursors'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " git
   Plug 'tpope/vim-fugitive'
