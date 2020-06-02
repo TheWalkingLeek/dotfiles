@@ -6,14 +6,12 @@ git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfi
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 
-choices=$(whiptail --checklist "Select packages:" \
-          15 40 5 vim vim on i3 i3 on openbox openbox on polybar polybar on rofi rofi on \
-          spotifyd spotifyd on terminator terminator on zsh zsh on terminator terminator \
+choices=$(whiptail --checklist "Select packages:" 15 40 5 vim vim on i3 i3 on \
+          openbox openbox on polybar polybar on rofi rofi on spotifyd spotifyd on \
+          terminator terminator on zsh zsh on terminator terminator on \
           pass pass on scrot scrot on 3>&1 1>&2 2>&3)
 exitstatus=$?
 clear
-
-echo $exitstatus
 
 if [[ $exitstatus = 1 || $exitstatus = 255 ]]; then
   exit 1
