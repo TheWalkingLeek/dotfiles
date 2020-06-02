@@ -2,13 +2,29 @@
 
 # clone dotfiles repo
 
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+PS3='Clone using: '
+options=("ssh" "https")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "ssh")
+            git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+            ;;
+        "https")
+            git clone --separate-git-dir=$HOME/.dotfiles https://github.com/TheWalkingLeek/dotfiles.git tmpdotfiles
+            ;;
+        *) 
+            echo "invalid option $REPLY, defaulting to using ssh"
+            git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+            ;;
+    esac
+done
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 
 choices=$(whiptail --checklist "Select packages:" 15 40 5 vim vim on i3 i3 on \
-          openbox openbox on polybar polybar on rofi rofi on \
-          spotifyd spotifyd on zsh zsh on terminator terminator on \
+          openbox openbox on rofi rofi on \
+          zsh zsh on terminator terminator on \
           pass pass on scrot scrot on 3>&1 1>&2 2>&3)
 exitstatus=$?
 clear
@@ -49,13 +65,11 @@ fi
 
 # polybar install
 
-if [[ $choices == *"polybar"* ]]; then
-  cp $HOME/.config/polybar/fonts/siji.pcf $HOME/.local/share/fonts/
-  cp $HOME/.config/polybar/fonts/termsyn/* $HOME/.local/share/fonts/
-  mv .config/polybar/{colors,colors-i3}.ini
-fi
+cp $HOME/.config/polybar/fonts/siji.pcf $HOME/.local/share/fonts/
+cp $HOME/.config/polybar/fonts/termsyn/* $HOME/.local/share/fonts/
+mv .config/polybar/{colors,colors-i3}.ini
 
-if [[ $choices == *"pass"* && $choices == *"spotifyd"* ]]; then
+if [[ $choices == *"pass"* ]]; then
   echo "Please setup your spotify password using your GPG key and this command: pass insert personal/spotify"
 fi
 
