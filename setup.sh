@@ -2,12 +2,22 @@
 
 # clone dotfiles repo
 
-# git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
-# rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
-# rm -r tmpdotfiles
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
+rm -r tmpdotfiles
 
-choices=$(whiptail --checklist "Select packages:" 15 40 5 vim vim on i3 i3 on polybar polybar on rofi rofi on spotifyd spotifyd on terminator terminator on zsh zsh on pass scrot on 3>&1 1>&2 2>&3)
+choices=$(whiptail --checklist "Select packages:" \
+          15 40 5 vim vim on i3 i3 on openbox openbox on polybar polybar on rofi rofi on \
+          spotifyd spotifyd on terminator terminator on zsh zsh on terminator terminator \
+          pass pass on scrot scrot on 3>&1 1>&2 2>&3)
+exitstatus=$?
 clear
+
+echo $exitstatus
+
+if [[ $exitstatus = 1 || $exitstatus = 255 ]]; then
+  exit 1
+fi
 
 SUDO=''
 if (( $EUID != 0 )); then
@@ -15,30 +25,40 @@ if (( $EUID != 0 )); then
   SUDO='sudo'
 fi
 
-packages=$(echo "$choices" | tr -d '"')
+packages=$(echo "$packages" | tr -d '"')
 $SUDO apt install -y $packages
 
 # i3 install
 
-$SUDO chmod +x $HOME/.config/i3/lock.sh
+if [[ $choices == *"vim"* ]]; then
+  $SUDO chmod +x $HOME/.config/i3/lock.sh
+fi
 
 # vim install
 
-vim -c "PlugInstall | q | q"
+if [[ $choices == *"vim"* ]]; then
+  vim -c "PlugInstall | q | q"
+fi
 
 # (oh-my-)zsh install
 
-$SUDO chsh -s $(which zsh)
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [[ $choices == *"zsh"* ]]; then
+  $SUDO chsh -s $(which zsh)
 
-# install fonts
-
-cp $HOME/.config/polybar/fonts/siji.pcf $HOME/.local/share/fonts/
-cp $HOME/.config/polybar/fonts/termsyn/* $HOME/.local/share/fonts/
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # polybar install
 
-mv .config/polybar/{colors,colors-i3}.ini
+if [[ $choices == *"polybar"* ]]; then
+  cp $HOME/.config/polybar/fonts/siji.pcf $HOME/.local/share/fonts/
+  cp $HOME/.config/polybar/fonts/termsyn/* $HOME/.local/share/fonts/
+  mv .config/polybar/{colors,colors-i3}.ini
+fi
 
+if [[ $choices == *"pass"* && $choices == *"spotifyd"* ]]; then
+  echo "Please setup your spotify password using your GPG key and this command: pass insert personal/spotify"
+fi
 
+exit 0
