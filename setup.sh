@@ -7,8 +7,8 @@ rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 
 choices=$(whiptail --checklist "Select packages:" 15 40 5 vim vim on i3 i3 on \
-          openbox openbox on polybar polybar on rofi rofi on spotifyd spotifyd on \
-          terminator terminator on zsh zsh on terminator terminator on \
+          openbox openbox on polybar polybar on rofi rofi on \
+          spotifyd spotifyd on zsh zsh on terminator terminator on \
           pass pass on scrot scrot on 3>&1 1>&2 2>&3)
 exitstatus=$?
 clear
@@ -23,7 +23,7 @@ if (( $EUID != 0 )); then
   SUDO='sudo'
 fi
 
-packages=$(echo "$packages" | tr -d '"')
+packages=$(echo "$choices" | sed 's/\"//g')
 $SUDO apt install -y $packages
 
 # i3 install
