@@ -9,13 +9,16 @@ do
     case $opt in
         "ssh")
             git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+            break
             ;;
         "https")
             git clone --separate-git-dir=$HOME/.dotfiles https://github.com/TheWalkingLeek/dotfiles.git tmpdotfiles
+            break
             ;;
         *) 
             echo "invalid option $REPLY, defaulting to using ssh"
             git clone --separate-git-dir=$HOME/.dotfiles git@github.com:TheWalkingLeek/dotfiles.git tmpdotfiles
+            break
             ;;
     esac
 done
@@ -65,6 +68,7 @@ fi
 
 # polybar install
 
+mkdir -p $HOME/.local/share/fonts
 cp $HOME/.config/polybar/fonts/siji.pcf $HOME/.local/share/fonts/
 cp $HOME/.config/polybar/fonts/termsyn/* $HOME/.local/share/fonts/
 mv .config/polybar/{colors,colors-i3}.ini
