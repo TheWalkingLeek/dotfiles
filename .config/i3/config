@@ -129,7 +129,7 @@ bindsym $mod+Shift+0 move container to workspace 10:gitg
 workspace 1:dev output $monM
 workspace 2:web output $monR
 workspace 3:comms output $monL
-workspace 4:server output $monL
+workspace 4:server output $monR
 workspace 5:tests output $monR
 workspace 6:music output $monL
 workspace 7:other output $monR

@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
   " general
-  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'mbbill/undotree'
   Plug 'franbach/miramare'
 
@@ -20,6 +21,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'liuchengxu/vista.vim'
+
 
   " git
   Plug 'tpope/vim-fugitive'
