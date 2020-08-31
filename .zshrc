@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias skills='cd /home/nrauch/git/dev/skills'
+alias 'cd-dev'='. cd-dev'
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -132,6 +132,7 @@ export EDITOR="vim"
 alias ..='cd ..'
 alias dotf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias 'gnome-control-center'='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
+alias vim='nvim'
 
 # Add minishift to PATH
 export PATH="$PATH:$HOME/minishift"
@@ -159,3 +160,4 @@ export ALIEN_SECTIONS_RIGHT=(
 # export ALIEN_SECTION_USER_BG=100
 # export JAVA_HOME="/home/nrauch/artemis/"
 # export ARTEMIS_HOME="/home/nrauch/artemis/"
+export PATH="$PATH:$HOME/bin"

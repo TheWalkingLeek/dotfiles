@@ -3,9 +3,11 @@ source ~/.vim/plugins.vim
 " UI
 set guioptions=1
 set background=dark
-let g:airline_theme='murmur'
+let g:airline_theme='miramare'
 let g:airline_powerline_fonts = 1
+let g:miramare_transparent_background = 1
 set backspace=indent,eol,start
+set pumblend=20
 " important!!
 set termguicolors
 
@@ -136,11 +138,17 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
+"
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" Renaming
+nmap <leader>rn <Plug>(coc-rename)
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -174,3 +182,8 @@ let g:fzf_buffers_jump = 1
 " modifyOtherKeys
 let &t_TI = ""
 let &t_TE = ""
+
+" fugitive
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>

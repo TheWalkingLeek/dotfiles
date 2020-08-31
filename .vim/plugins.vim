@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'mbbill/undotree'
   Plug 'franbach/miramare'
+  Plug 'easymotion/vim-easymotion'
 
   " code general
   Plug 'Chiel92/vim-autoformat'
