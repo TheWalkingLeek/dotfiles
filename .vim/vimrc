@@ -50,6 +50,7 @@ filetype plugin indent on
 
 " map
 let mapleader=" "
+let maplocalleader="  "
 nmap <F1> <nop>
 map <F2> orequire 'pry'; binding.pry unless $pstop<ESC>
 nnoremap <silent> <F3> :Rgrep<CR>*
@@ -186,4 +187,16 @@ let &t_TE = ""
 " fugitive
 nmap <leader>gh :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>
+nmap <leader>gs :G<CR><C-w>T
+
+" tex
+let g:tex_flavor = 'latex'
+
+" Stop confusing bracket highlighting 
+function! g:FckThatMatchParen ()
+    if exists(":NoMatchParen")
+        :NoMatchParen
+    endif
+endfunction
+
+autocmd VimEnter * call FckThatMatchParen()

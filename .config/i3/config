@@ -235,3 +235,5 @@ bindsym $mod+F2 exec firefox
 # gaps outer 2
 
 exec setxkbmap -option caps:escape
+
+exec setxkbmap -layout us,ch
