@@ -52,4 +52,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'rust-lang/rust.vim'
 
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+  Plug 'skywind3000/asyncrun.vim'
 call plug#end()
