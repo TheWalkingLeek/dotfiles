@@ -51,6 +51,10 @@ call plug#begin('~/.vim/plugged')
   " rust
   Plug 'rust-lang/rust.vim'
 
+  " tex
+  Plug 'lervag/vimtex'
+  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'skywind3000/asyncrun.vim'
 call plug#end()
