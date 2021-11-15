@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mbbill/undotree'
   Plug 'franbach/miramare'
   Plug 'easymotion/vim-easymotion'
+  Plug 'preservim/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
 
   " code general
   Plug 'Chiel92/vim-autoformat'
@@ -23,6 +25,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'liuchengxu/vista.vim'
+
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+
+  Plug 'vim-test/vim-test'
+  Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 
 
   " git

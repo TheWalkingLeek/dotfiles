@@ -200,3 +200,12 @@ function! g:FckThatMatchParen ()
 endfunction
 
 autocmd VimEnter * call FckThatMatchParen()
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader><C-n> :NERDTree<CR>
+nnoremap <leader><C-t> :NERDTreeToggle<CR>
+nnoremap <leader><C-f> :NERDTreeFind<CR>
+let NERDTreeShowLineNumbers=1
+autocmd VimEnter * NERDTreeTabsOpen
+autocmd VimEnter * NERDTreeFocusToggle
