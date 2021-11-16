@@ -209,3 +209,7 @@ nnoremap <leader><C-f> :NERDTreeFind<CR>
 let NERDTreeShowLineNumbers=1
 autocmd VimEnter * NERDTreeTabsOpen
 autocmd VimEnter * NERDTreeFocusToggle
+
+imap <C-a> ä
+imap <C-o> ö
+imap <C-u> ü
