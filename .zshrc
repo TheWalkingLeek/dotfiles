@@ -131,8 +131,10 @@ export EDITOR="nvim"
 alias ..='cd ..'
 alias dotf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias 'gnome-control-center'='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
-alias vim='nvim'
+alias vim='TERM="gnome-terminal" nvim'
 alias 'cdev'='. cd-dev'
+alias 'us-menu'='setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option compose:menu -option caps:escape'
+alias 'dc'='docker-compose'
 
 # Add minishift to PATH
 export PATH="$PATH:$HOME/minishift"

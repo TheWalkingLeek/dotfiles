@@ -1,3 +1,5 @@
+let g:ale_disable_lsp = 1
+
 source ~/.vim/plugins.vim
 
 " UI
@@ -11,7 +13,8 @@ set pumblend=20
 " important!!
 set termguicolors
 
-colorscheme miramare
+colorscheme gruvbox
+" colorscheme miramare
 
 " use spaces instead of tabs
 set tabstop=2
@@ -129,6 +132,8 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
+inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() :
+        \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -151,7 +156,9 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " Renaming
 nmap <leader>rn <Plug>(coc-rename)
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gdv <C-W>v<Plug>(coc-definition)
+nmap <silent> gds <C-W>s<Plug>(coc-definition)
+nmap <silent> gdd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -175,10 +182,14 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_default_executive = 'coc'
 
 " fzf
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-nnoremap <C-p> :GFiles<CR>
-let g:fzf_buffers_jump = 1
+" let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+" let $FZF_DEFAULT_OPTS='--reverse'
+" nnoremap <C-p> :GFiles<CR>
+" let g:fzf_buffers_jump = 1
+
+" telescope
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-g> <cmd>Telescope live_grep<cr>
 
 " modifyOtherKeys
 let &t_TI = ""
@@ -213,3 +224,11 @@ autocmd VimEnter * NERDTreeFocusToggle
 imap <C-a> ä
 imap <C-o> ö
 imap <C-u> ü
+
+set foldlevelstart=20
+
+" Ale
+nnoremap <leader>af :ALEFix<CR>
+
+" treesitter
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}

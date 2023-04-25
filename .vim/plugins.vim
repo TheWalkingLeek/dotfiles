@@ -1,5 +1,9 @@
 call plug#begin('~/.vim/plugged')
   " general
+  Plug 'ellisonleao/gruvbox.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'mbbill/undotree'
@@ -25,18 +29,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'liuchengxu/vista.vim'
+  Plug 'dense-analysis/ale'
 
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 
   Plug 'vim-test/vim-test'
-  Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 
 
   " git
   Plug 'tpope/vim-fugitive'
 
   " UI
+  " Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
