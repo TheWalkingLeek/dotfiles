@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'vim-test/vim-test'
 
+  Plug 'cuducos/yaml.nvim'
 
   " git
   Plug 'tpope/vim-fugitive'

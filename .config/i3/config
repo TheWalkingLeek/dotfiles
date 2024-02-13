@@ -219,7 +219,7 @@ exec --no-startup-id feh --bg-scale $background
 exec --no-startup-id xinput set-prop 13 287 1 
 
 # xautolock
-exec --no-startup-id xautolock -time 2 -locker ~/.config/i3/lock.sh
+# exec --no-startup-id xautolock -time 2 -locker ~/.config/i3/lock.sh
 
 exec xcompmgr -c -f -n
 exec xset +fp /home/nrauch/.local/share/fonts
@@ -236,4 +236,4 @@ bindsym $mod+F2 exec firefox
 
 exec setxkbmap -option caps:escape
 
-exec setxkbmap -layout us,ch
+exec us-menu
