@@ -1,9 +1,10 @@
 call plug#begin('~/.vim/plugged')
   " general
-  Plug 'ellisonleao/gruvbox.nvim'
+  Plug 'ellisonleao/gruvbox.nvim', {'branch': 'main'}
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'cuducos/yaml.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'mbbill/undotree'

@@ -1,8 +1,9 @@
+autoload -U +X bashcompinit && bashcompinit
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/nrauch/.oh-my-zsh"
+export ZSH="/home/nilsrauch/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,13 +64,14 @@ ZSH_THEME="agnoster"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
+#
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   git
   zsh-autosuggestions
 )
@@ -115,13 +117,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
-export NVM_DIR="/home/nrauch/.nvm"
+export NVM_DIR="/home/nilsrauch/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 
 export EDITOR="nvim"
@@ -134,7 +133,8 @@ alias 'gnome-control-center'='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
 alias vim='TERM="gnome-terminal" nvim'
 alias 'cdev'='. cd-dev'
 alias 'us-menu'='setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option compose:menu -option caps:escape'
-alias 'dc'='docker-compose'
+alias 'dc'='docker compose'
+alias 'vimrc'='vim ~/.vim/vimrc'
 
 # Add minishift to PATH
 export PATH="$PATH:$HOME/minishift"
@@ -163,3 +163,11 @@ export ALIEN_SECTIONS_RIGHT=(
 # export JAVA_HOME="/home/nrauch/artemis/"
 # export ARTEMIS_HOME="/home/nrauch/artemis/"
 export PATH="$PATH:$HOME/bin"
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+eval "us-menu"
+
+eval $(thefuck --alias)
+export PATH="/home/nilsrauch/git/hitobito/generic/app/hitobito:$PATH"
+export PATH="/home/nilsrauch/bin:$PATH"
